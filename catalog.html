@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров и услуг - Администрация Груцинского Сельского поселения</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/Лого.png" alt="Груцинское Сельское поселение" class="logo-image">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="catalog.html"><i class="fas fa-store"></i> Каталог</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count">2</span></a></li>
+                        <li><a href="account.html"><i class="fas fa-user"></i> Личный кабинет</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-phone"></i> Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Каталог товаров и услуг</h1>
+                <p class="page-subtitle">Широкий выбор сувенирной продукции и услуг администрации</p>
+            </div>
+            
+            <div class="catalog-controls">
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <h3>Категории</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                Все товары
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Сувениры
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Услуги
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Цена</h3>
+                        <div class="price-range">
+                            <input type="range" min="0" max="5000" value="5000" class="price-slider">
+                            <div class="price-values">
+                                <span>0 ₽</span>
+                                <span>5000 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Наличие</h3>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                                В наличии
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Под заказ
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary apply-filters">
+                        <i class="fas fa-filter"></i> Применить фильтры
+                    </button>
+                </div>
+                
+                <div class="catalog-main-content">
+                    <div class="sort-section">
+                        <div class="sort-controls">
+                            <label>Сортировка:</label>
+                            <select class="sort-select">
+                                <option value="popular">По популярности</option>
+                                <option value="price-low">Сначала дешевые</option>
+                                <option value="price-high">Сначала дорогие</option>
+                                <option value="new">Сначала новые</option>
+                            </select>
+                        </div>
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid catalog-view">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="product-badge">Хит продаж</div>
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Кружка" alt="Кружка с гербом">
+                            </div>
+                            <h3 class="product-title">Кружка с гербом</h3>
+                            <p class="product-description">Керамическая кружка с символикой поселения, объем 350 мл</p>
+                            <div class="product-meta">
+                                <span class="product-category">Сувениры</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">500 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Футболка" alt="Футболка детская">
+                            </div>
+                            <h3 class="product-title">Футболка детская</h3>
+                            <p class="product-description">Хлопковая футболка с принтом герба поселения, размеры S-XXL</p>
+                            <div class="product-meta">
+                                <span class="product-category">Сувениры</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">800 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="product-badge">Новинка</div>
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Брелок" alt="Брелок">
+                            </div>
+                            <h3 class="product-title">Брелок</h3>
+                            <p class="product-description">Металлический брелок с логотипом поселения, длина 5 см</p>
+                            <div class="product-meta">
+                                <span class="product-category">Сувениры</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">250 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Ксерокс" alt="Ксерокопия">
+                            </div>
+                            <h3 class="product-title">Ксерокопия</h3>
+                            <p class="product-description">Копирование документов формата А4, черно-белая печать</p>
+                            <div class="product-meta">
+                                <span class="product-category">Услуги</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">10 ₽/стр</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> Заказать
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="product-badge">Бесплатно</div>
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Консультация" alt="Консультация">
+                            </div>
+                            <h3 class="product-title">Консультация</h3>
+                            <p class="product-description">Юридическая консультация по вопросам сельского поселения</p>
+                            <div class="product-meta">
+                                <span class="product-category">Услуги</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">Бесплатно</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> Заказать
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Справка" alt="Оформление справки">
+                            </div>
+                            <h3 class="product-title">Оформление справки</h3>
+                            <p class="product-description">Подготовка официальных документов и справок установленного образца</p>
+                            <div class="product-meta">
+                                <span class="product-category">Услуги</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">150 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> Заказать
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Значок" alt="Значок">
+                            </div>
+                            <h3 class="product-title">Значок с гербом</h3>
+                            <p class="product-description">Металлический значок с символикой поселения, диаметр 3 см</p>
+                            <div class="product-meta">
+                                <span class="product-category">Сувениры</span>
+                                <span class="product-stock">Под заказ</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">180 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Папка" alt="Папка для документов">
+                            </div>
+                            <h3 class="product-title">Папка для документов</h3>
+                            <p class="product-description">Качественная папка с логотипом поселения, формат А4</p>
+                            <div class="product-meta">
+                                <span class="product-category">Сувениры</span>
+                                <span class="product-stock">В наличии</span>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">350 ₽</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> с. Груцинское, ул. Центральная, д. 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@grudininskoe.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">О поселении</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе последних новостей и акций</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Администрация Груцинского Сельского поселения. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

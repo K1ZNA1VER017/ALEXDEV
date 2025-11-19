@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин - Администрация Груцинского Сельского поселения</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/Лого.png" alt="Груцинское Сельское поселение" class="logo-image">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="catalog.html"><i class="fas fa-store"></i> Каталог</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count">2</span></a></li>
+                        <li><a href="account.html"><i class="fas fa-user"></i> Личный кабинет</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-phone"></i> Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="hero-section">
+                <h1 class="page-title">Добро пожаловать в интернет-магазин сельской администрации</h1>
+                <p class="hero-subtitle">Здесь вы можете приобрести сувенирную продукцию, заказать услуги и узнать о мероприятиях</p>
+                <div class="hero-buttons">
+                    <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                    <a href="#features" class="btn btn-secondary">Узнать больше</a>
+                </div>
+            </div>
+
+            <div class="features-section" id="features">
+                <h2>Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Быстрая доставка</h3>
+                        <p>Доставка по всему району в течение 1-2 дней</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Доступные цены</h3>
+                        <p>Специальные цены для жителей поселения</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Поддержка 24/7</h3>
+                        <p>Наши специалисты всегда готовы помочь</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Качественные товары</h3>
+                        <p>Только проверенные производители и поставщики</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Популярные товары</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge">Хит продаж</div>
+                        <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Кружка" alt="Сувенирная кружка">
+                    </div>
+                    <h3 class="product-title">Сувенирная кружка</h3>
+                    <p class="product-description">Керамическая кружка с символикой поселения, объем 350 мл</p>
+                    <div class="product-footer">
+                        <p class="product-price">500 ₽</p>
+                        <button class="btn btn-primary">В корзину</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Футболка" alt="Футболка с символикой">
+                    </div>
+                    <h3 class="product-title">Футболка с символикой</h3>
+                    <p class="product-description">Хлопковая футболка с принтом герба поселения, все размеры</p>
+                    <div class="product-footer">
+                        <p class="product-price">1200 ₽</p>
+                        <button class="btn btn-primary">В корзину</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-badge">Новинка</div>
+                        <img src="https://via.placeholder.com/250x150/4A90E2/FFFFFF?text=Услуга" alt="Оформление документов">
+                    </div>
+                    <h3 class="product-title">Оформление документов</h3>
+                    <p class="product-description">Быстрое оформление справок и официальных документов</p>
+                    <div class="product-footer">
+                        <p class="product-price">200 ₽</p>
+                        <button class="btn btn-primary">Заказать</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-section">
+                <h2 class="section-title">Новости и события</h2>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-date">15.12.2024</div>
+                        <h3>Новая сувенирная продукция</h3>
+                        <p>В нашем магазине появились новые виды сувенирной продукции с символикой поселения.</p>
+                        <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">10.12.2024</div>
+                        <h3>Изменение графика работы</h3>
+                        <p>С 15 декабря администрация переходит на зимний график работы.</p>
+                        <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">05.12.2024</div>
+                        <h3>Новогодние мероприятия</h3>
+                        <p>Приглашаем всех жителей на праздничные новогодние мероприятия.</p>
+                        <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> с. Груцинское, ул. Центральная, д. 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@grudininskoe.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">О поселении</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе последних новостей и акций</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Администрация Груцинского Сельского поселения. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Администрация Груцинского Сельского поселения</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для страницы контактов */
+        .contacts-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: var(--radius);
+        }
+        
+        .contacts-hero h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .contacts-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card-modern {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+        
+        .contact-card-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon-modern {
+            width: 70px;
+            height: 70px;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            transition: all 0.3s;
+        }
+        
+        .contact-card-modern:hover .contact-icon-modern {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .contact-card-modern h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-card-modern p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-note-modern {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-color);
+        }
+        
+        .map-container {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+        
+        .map-placeholder-modern {
+            height: 400px;
+            background: var(--light-color);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(44, 90, 160, 0.1) 100%);
+        }
+        
+        .map-placeholder-modern i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+        
+        .map-placeholder-modern h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+        }
+        
+        .map-placeholder-modern p {
+            margin-bottom: 1.5rem;
+            z-index: 1;
+        }
+        
+        .departments-section-modern {
+            margin-bottom: 3rem;
+        }
+        
+        .departments-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .department-card-modern {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .department-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+        
+        .department-card-modern:hover {
+            transform: translateY(-5px);
+        }
+        
+        .department-card-modern h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .department-card-modern > p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .department-contact-modern {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            color: var(--text-light);
+        }
+        
+        .department-contact-modern i {
+            color: var(--secondary-color);
+            width: 20px;
+        }
+        
+        .contact-form-section-modern {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+        
+        .contact-form-container-modern {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group-modern {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group-modern label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group-modern input,
+        .form-group-modern select,
+        .form-group-modern textarea {
+            padding: 0.8rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+        
+        .form-group-modern input:focus,
+        .form-group-modern select:focus,
+        .form-group-modern textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+        
+        .form-row-modern {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .contact-sidebar-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-methods-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-method-modern {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light-color);
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+        
+        .contact-method-modern:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-method-modern i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 0.2rem;
+        }
+        
+        .contact-method-modern div {
+            flex: 1;
+        }
+        
+        .contact-method-modern h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-method-modern p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-link-modern {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: gap 0.3s;
+        }
+        
+        .social-link-modern:hover {
+            gap: 0.5rem;
+        }
+        
+        .form-actions-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .form-note-modern {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .contact-form-container-modern {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row-modern {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions-modern {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .departments-grid-modern {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacts-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .contacts-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-form-section-modern {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/Лого.png" alt="Груцинское Сельское поселение" class="logo-image">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="catalog.html"><i class="fas fa-store"></i> Каталог</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина <span class="cart-count">2</span></a></li>
+                        <li><a href="account.html"><i class="fas fa-user"></i> Личный кабинет</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-phone"></i> Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="contacts-hero">
+                <h1>Свяжитесь с нами</h1>
+                <p>Мы всегда готовы ответить на ваши вопросы и помочь с решением любых задач</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card-modern">
+                    <div class="contact-icon-modern">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>с. Груцинское, ул. Центральная, д. 1</p>
+                    <p class="contact-note-modern">Здание администрации сельского поселения</p>
+                </div>
+                
+                <div class="contact-card-modern">
+                    <div class="contact-icon-modern">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Телефоны</h3>
+                    <p>+7 (495) 123-45-67 - Приемная</p>
+                    <p>+7 (495) 123-45-68 - Отдел услуг</p>
+                    <p class="contact-note-modern">Звонки принимаются в рабочее время</p>
+                </div>
+                
+                <div class="contact-card-modern">
+                    <div class="contact-icon-modern">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@grudininskoe.ru - Общие вопросы</p>
+                    <p>orders@grudininskoe.ru - Заказы и услуги</p>
+                    <p class="contact-note-modern">Отвечаем в течение 24 часов</p>
+                </div>
+                
+                <div class="contact-card-modern">
+                    <div class="contact-icon-modern">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Режим работы</h3>
+                    <p>Понедельник-Пятница: 9:00-18:00</p>
+                    <p>Суббота-Воскресенье: выходной</p>
+                    <p class="contact-note-modern">Обед: 13:00-14:00</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <h2 class="section-title">Как нас найти</h2>
+                <div class="map-placeholder-modern">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Карта проезда</h3>
+                    <p>Интерактивная карта с маршрутом проезда</p>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-directions"></i> Построить маршрут
+                    </button>
+                </div>
+            </div>
+            
+            <div class="departments-section-modern">
+                <h2 class="section-title">Отделы и сотрудники</h2>
+                <div class="departments-grid-modern">
+                    <div class="department-card-modern">
+                        <h3>Приемная</h3>
+                        <p>Общие вопросы, запись на прием</p>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (495) 123-45-67</span>
+                        </div>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-user"></i>
+                            <span>Петрова Мария Ивановна</span>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card-modern">
+                        <h3>Отдел услуг</h3>
+                        <p>Оформление документов, консультации</p>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (495) 123-45-68</span>
+                        </div>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-user"></i>
+                            <span>Сидоров Алексей Петрович</span>
+                        </div>
+                    </div>
+                    
+                    <div class="department-card-modern">
+                        <h3>Бухгалтерия</h3>
+                        <p>Финансовые вопросы, оплата услуг</p>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (495) 123-45-69</span>
+                        </div>
+                        <div class="department-contact-modern">
+                            <i class="fas fa-user"></i>
+                            <span>Козлова Анна Сергеевна</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-section-modern">
+                <h2 class="section-title">Форма обратной связи</h2>
+                <div class="contact-form-container-modern">
+                    <form class="contact-form-modern">
+                        <div class="form-row-modern">
+                            <div class="form-group-modern">
+                                <label for="contact-name">Ваше имя *</label>
+                                <input type="text" id="contact-name" required placeholder="Иванов Иван Иванович">
+                            </div>
+                            
+                            <div class="form-group-modern">
+                                <label for="contact-phone">Ваш телефон</label>
+                                <input type="tel" id="contact-phone" placeholder="+7 (900) 123-45-67">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-modern">
+                            <label for="contact-email">Ваш Email *</label>
+                            <input type="email" id="contact-email" required placeholder="ivanov@example.com">
+                        </div>
+                        
+                        <div class="form-group-modern">
+                            <label for="contact-subject">Тема сообщения</label>
+                            <select id="contact-subject">
+                                <option value="">Выберите тему</option>
+                                <option value="order">Вопрос по заказу</option>
+                                <option value="service">Консультация по услугам</option>
+                                <option value="complaint">Жалоба или предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-modern">
+                            <label for="contact-message">Сообщение *</label>
+                            <textarea id="contact-message" rows="5" required placeholder="Опишите ваш вопрос подробно..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions-modern">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i> Отправить сообщение
+                            </button>
+                            <div class="form-note-modern">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Поля, отмеченные *, обязательны для заполнения</span>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="contact-sidebar-modern">
+                        <h3>Другие способы связи</h3>
+                        <div class="contact-methods-modern">
+                            <div class="contact-method-modern">
+                                <i class="fab fa-vk"></i>
+                                <div>
+                                    <h4>ВКонтакте</h4>
+                                    <p>Наша официальная группа</p>
+                                    <a href="#" class="social-link-modern">Перейти <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method-modern">
+                                <i class="fab fa-telegram"></i>
+                                <div>
+                                    <h4>Telegram</h4>
+                                    <p>Быстрая связь и уведомления</p>
+                                    <a href="#" class="social-link-modern">Написать <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method-modern">
+                                <i class="fas fa-comment-alt"></i>
+                                <div>
+                                    <h4>Онлайн-чат</h4>
+                                    <p>Мгновенные ответы на вопросы</p>
+                                    <a href="#" class="social-link-modern">Открыть чат <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> с. Груцинское, ул. Центральная, д. 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@grudininskoe.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">О поселении</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Подписка на новости</h3>
+                    <p>Будьте в курсе последних новостей и акций</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Администрация Груцинского Сельского поселения. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
